@@ -1,0 +1,43 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://cbrl.com/soap/service/example/vehicle/domain"
+	targetNamespace="http://cbrl.com/soap/service/example/vehicle/domain"
+	elementFormDefault="qualified">
+
+	<xs:element name="searchVehicleRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="color" type="xs:string" />
+				<xs:element name="make" type="tns:Make" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="searchVehicleResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="vehicles" type="tns:Vehicle"
+					minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="Vehicle">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" />
+			<xs:element name="year" type="xs:int" />
+			<xs:element name="km" type="xs:int" />
+			<xs:element name="color" type="xs:string" />
+			<xs:element name="gear" type="xs:string" />
+			<xs:element name="make" type="tns:Make" />
+			<xs:element name="price" type="xs:decimal" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="Make">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BMW" />
+			<xs:enumeration value="FIAT" />
+			<xs:enumeration value="AUDI" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
