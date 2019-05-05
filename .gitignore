@@ -6,7 +6,6 @@ HELP.md
 .apt_generated
 .classpath
 .factorypath
-.project
 .settings
 .springBeans
 .sts4-cache
@@ -42,7 +41,6 @@ HELP.md
 target/
 
 #Eclipse files
-**/.project
 **/.classpath
 **/.settings/
 **/bin/
